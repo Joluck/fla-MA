@@ -31,13 +31,13 @@ from .mesa_net import MesaNet
 from .mla import MultiheadLatentAttention
 from .moba import MoBA
 from .mom import MomAttention
-from .momentum_deltanet import MomentumDeltaNet
+# from .momentum_deltanet import MomentumDeltaNet
 from .multiscale_retention import MultiScaleRetention
 from .nsa import NativeSparseAttention
 from .parallax import Parallax
 from .path_attn import PaTHAttention
-from .precond_gated_deltanet import PrecondGatedDeltaNet
-from .precond_kda import PrecondKDA
+# from .precond_gated_deltanet import PrecondGatedDeltaNet
+# from .precond_kda import PrecondKDA
 from .raven import Raven
 from .rebased import ReBasedLinearAttention
 from .rodimus import RodimusAttention, SlidingWindowSharedKeyAttention
@@ -45,6 +45,7 @@ from .rwkv6 import RWKV6Attention
 from .rwkv7 import RWKV7Attention
 from .wall_attn import WallAttention
 from .yoco import YOCOCrossAttention, YOCOGatedRetention, YOCOSharedKVBuilder
+from .memory_attn import MemoryAttention
 
 __all__ = [
     'ABCAttention',
@@ -72,14 +73,14 @@ __all__ = [
     'MesaNet',
     'MoBA',
     'MomAttention',
-    'MomentumDeltaNet',
+    # 'MomentumDeltaNet',
     'MultiScaleRetention',
     'MultiheadLatentAttention',
     'NativeSparseAttention',
     'PaTHAttention',
     'Parallax',
-    'PrecondGatedDeltaNet',
-    'PrecondKDA',
+    # 'PrecondGatedDeltaNet',
+    # 'PrecondKDA',
     'RWKV6Attention',
     'RWKV7Attention',
     'Raven',
@@ -90,4 +91,6 @@ __all__ = [
     'YOCOCrossAttention',
     'YOCOGatedRetention',
     'YOCOSharedKVBuilder',
+    'MemoryAttention',
+
 ]

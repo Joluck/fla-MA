@@ -36,16 +36,16 @@ from fla.models.mom import MomConfig, MomForCausalLM, MomModel
 from fla.models.nsa import NSAConfig, NSAForCausalLM, NSAModel
 from fla.models.parallax import ParallaxConfig, ParallaxForCausalLM, ParallaxModel
 from fla.models.path_attn import PaTHAttentionConfig, PaTHAttentionForCausalLM, PaTHAttentionModel
-from fla.models.precond_gated_deltanet import (
-    PrecondGatedDeltaNetConfig,
-    PrecondGatedDeltaNetForCausalLM,
-    PrecondGatedDeltaNetModel,
-)
-from fla.models.precond_kda import (
-    PrecondKDAConfig,
-    PrecondKDAForCausalLM,
-    PrecondKDAModel,
-)
+# from fla.models.precond_gated_deltanet import (
+#     PrecondGatedDeltaNetConfig,
+#     PrecondGatedDeltaNetForCausalLM,
+#     PrecondGatedDeltaNetModel,
+# )
+# from fla.models.precond_kda import (
+#     PrecondKDAConfig,
+#     PrecondKDAForCausalLM,
+#     PrecondKDAModel,
+# )
 from fla.models.raven import RavenConfig, RavenForCausalLM, RavenModel
 from fla.models.retnet import RetNetConfig, RetNetForCausalLM, RetNetModel
 from fla.models.rodimus import RodimusConfig, RodimusForCausalLM, RodimusModel
@@ -55,6 +55,7 @@ from fla.models.samba import SambaConfig, SambaForCausalLM, SambaModel
 from fla.models.transformer import TransformerConfig, TransformerForCausalLM, TransformerModel
 from fla.models.wall_transformer import WallTransformerConfig, WallTransformerForCausalLM, WallTransformerModel
 from fla.models.yoco import YOCOConfig, YOCOForCausalLM, YOCOModel
+from fla.models.memory_attn import MemoryAttnConfig, MemoryAttnForCausalLM, MemoryAttnModel
 
 __all__ = [
     'ABCConfig',
@@ -138,12 +139,12 @@ __all__ = [
     'ParallaxConfig',
     'ParallaxForCausalLM',
     'ParallaxModel',
-    'PrecondGatedDeltaNetConfig',
-    'PrecondGatedDeltaNetForCausalLM',
-    'PrecondGatedDeltaNetModel',
-    'PrecondKDAConfig',
-    'PrecondKDAForCausalLM',
-    'PrecondKDAModel',
+    # 'PrecondGatedDeltaNetConfig',
+    # 'PrecondGatedDeltaNetForCausalLM',
+    # 'PrecondGatedDeltaNetModel',
+    # 'PrecondKDAConfig',
+    # 'PrecondKDAForCausalLM',
+    # 'PrecondKDAModel',
     'RWKV6Config',
     'RWKV6ForCausalLM',
     'RWKV6Model',
@@ -171,4 +172,7 @@ __all__ = [
     'YOCOConfig',
     'YOCOForCausalLM',
     'YOCOModel',
+    'MemoryAttnConfig',
+    'MemoryAttnForCausalLM',
+    'MemoryAttnModel'
 ]
