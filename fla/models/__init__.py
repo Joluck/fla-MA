@@ -29,6 +29,7 @@ from fla.models.log_linear_mamba2 import LogLinearMamba2Config, LogLinearMamba2F
 from fla.models.mamba import MambaConfig, MambaForCausalLM, MambaModel
 from fla.models.mamba2 import Mamba2Config, Mamba2ForCausalLM, Mamba2Model
 from fla.models.mamba3 import Mamba3Config, Mamba3ForCausalLM, Mamba3Model
+from fla.models.memory_attn import MemoryAttnConfig, MemoryAttnForCausalLM, MemoryAttnModel
 from fla.models.mesa_net import MesaNetConfig, MesaNetForCausalLM, MesaNetModel
 from fla.models.mla import MLAConfig, MLAForCausalLM, MLAModel
 from fla.models.moba import MoBAConfig, MoBAForCausalLM, MoBAModel
@@ -36,16 +37,16 @@ from fla.models.mom import MomConfig, MomForCausalLM, MomModel
 from fla.models.nsa import NSAConfig, NSAForCausalLM, NSAModel
 from fla.models.parallax import ParallaxConfig, ParallaxForCausalLM, ParallaxModel
 from fla.models.path_attn import PaTHAttentionConfig, PaTHAttentionForCausalLM, PaTHAttentionModel
-# from fla.models.precond_gated_deltanet import (
-#     PrecondGatedDeltaNetConfig,
-#     PrecondGatedDeltaNetForCausalLM,
-#     PrecondGatedDeltaNetModel,
-# )
-# from fla.models.precond_kda import (
-#     PrecondKDAConfig,
-#     PrecondKDAForCausalLM,
-#     PrecondKDAModel,
-# )
+from fla.models.precond_gated_deltanet import (
+    PrecondGatedDeltaNetConfig,
+    PrecondGatedDeltaNetForCausalLM,
+    PrecondGatedDeltaNetModel,
+)
+from fla.models.precond_kda import (
+    PrecondKDAConfig,
+    PrecondKDAForCausalLM,
+    PrecondKDAModel,
+)
 from fla.models.raven import RavenConfig, RavenForCausalLM, RavenModel
 from fla.models.retnet import RetNetConfig, RetNetForCausalLM, RetNetModel
 from fla.models.rodimus import RodimusConfig, RodimusForCausalLM, RodimusModel
@@ -55,7 +56,6 @@ from fla.models.samba import SambaConfig, SambaForCausalLM, SambaModel
 from fla.models.transformer import TransformerConfig, TransformerForCausalLM, TransformerModel
 from fla.models.wall_transformer import WallTransformerConfig, WallTransformerForCausalLM, WallTransformerModel
 from fla.models.yoco import YOCOConfig, YOCOForCausalLM, YOCOModel
-from fla.models.memory_attn import MemoryAttnConfig, MemoryAttnForCausalLM, MemoryAttnModel
 
 __all__ = [
     'ABCConfig',
@@ -121,6 +121,9 @@ __all__ = [
     'MambaConfig',
     'MambaForCausalLM',
     'MambaModel',
+    'MemoryAttnConfig',
+    'MemoryAttnForCausalLM',
+    'MemoryAttnModel',
     'MesaNetConfig',
     'MesaNetForCausalLM',
     'MesaNetModel',
@@ -139,12 +142,12 @@ __all__ = [
     'ParallaxConfig',
     'ParallaxForCausalLM',
     'ParallaxModel',
-    # 'PrecondGatedDeltaNetConfig',
-    # 'PrecondGatedDeltaNetForCausalLM',
-    # 'PrecondGatedDeltaNetModel',
-    # 'PrecondKDAConfig',
-    # 'PrecondKDAForCausalLM',
-    # 'PrecondKDAModel',
+    'PrecondGatedDeltaNetConfig',
+    'PrecondGatedDeltaNetForCausalLM',
+    'PrecondGatedDeltaNetModel',
+    'PrecondKDAConfig',
+    'PrecondKDAForCausalLM',
+    'PrecondKDAModel',
     'RWKV6Config',
     'RWKV6ForCausalLM',
     'RWKV6Model',
@@ -171,8 +174,5 @@ __all__ = [
     'WallTransformerModel',
     'YOCOConfig',
     'YOCOForCausalLM',
-    'YOCOModel',
-    'MemoryAttnConfig',
-    'MemoryAttnForCausalLM',
-    'MemoryAttnModel'
+    'YOCOModel'
 ]

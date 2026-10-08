@@ -103,7 +103,7 @@ class MemoryAttention(nn.Module):
 
         batch_size, q_len, _ = hidden_states.size()
 
-        q,k,m = self.q_proj(hidden_states), self.k_proj(hidden_states), self.m_proj(input_ids)
+        q, k, m = self.q_proj(hidden_states), self.k_proj(hidden_states), self.m_proj(input_ids)
         q = rearrange(q, '... (h d) -> ... h d', d=self.head_dim)
         k = rearrange(k, '... (h d) -> ... h d', d=self.head_dim)
         m = rearrange(m, '... (h d) -> ... h d', d=self.head_dim)
