@@ -278,8 +278,8 @@ class MemoryAttnModel(MemoryAttnPreTrainedModel):
         # retrieve input_ids and inputs_embeds
         if input_ids is not None and inputs_embeds is not None:
             raise ValueError("You cannot specify both input_ids and inputs_embeds at the same time")
-        if input_ids is None and inputs_embeds is None:
-            raise ValueError("You have to specify either input_ids or inputs_embeds")
+        if input_ids is None:
+            raise ValueError("MemoryAttn requires `input_ids`; `inputs_embeds` cannot replace them")
 
         if use_cache and not isinstance(past_key_values, Cache):
             past_key_values = Cache.from_legacy_cache(past_key_values)

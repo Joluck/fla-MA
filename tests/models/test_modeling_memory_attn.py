@@ -79,6 +79,25 @@ def test_modeling():
         assert layer.attn.m_proj.weight.grad.abs().sum() > 0
 
 
+@pytest.mark.parametrize('dtype', [torch.float16, torch.bfloat16], ids=['fp16', 'bf16'])
+def test_attention_autocast(dtype):
+    torch.manual_seed(42)
+    layer = MemoryAttention(hidden_size=256, num_heads=4, num_kv_heads=2, vocab_size=128).to(device=device)
+    hidden = torch.randn(2, 63, 256, device=device)
+    ids = torch.randint(0, 128, (2, 63), device=device)
+    with torch.autocast(device_type=device, dtype=dtype):
+        output = layer(hidden_states=hidden, input_ids=ids)[0]
+    assert output.dtype == dtype
+    assert torch.isfinite(output).all()
+
+
+def test_inputs_embeds_unsupported():
+    model = _create_model()
+    ids = torch.randint(0, 128, (2, 63), device=device)
+    with pytest.raises(ValueError, match='requires `input_ids`'):
+        model(inputs_embeds=model.model.embeddings(ids))
+
+
 @pytest.mark.parametrize('window_size', [None, 16], ids=['full', 'window'])
 @torch.no_grad()
 def test_generation(window_size):

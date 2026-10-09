@@ -186,5 +186,5 @@ __all__ = [
     'WallTransformerModel',
     'YOCOConfig',
     'YOCOForCausalLM',
-    'YOCOModel'
+    'YOCOModel',
 ]

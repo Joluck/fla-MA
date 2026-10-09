@@ -38,7 +38,6 @@ from .multiscale_retention import MultiScaleRetention
 from .nsa import NativeSparseAttention
 from .parallax import Parallax
 from .path_attn import PaTHAttention
-
 from .precond_gated_deltanet import PrecondGatedDeltaNet
 from .precond_kda import PrecondKDA
 from .raven import Raven
@@ -97,5 +96,4 @@ __all__ = [
     'YOCOCrossAttention',
     'YOCOGatedRetention',
     'YOCOSharedKVBuilder',
-
 ]

@@ -102,13 +102,15 @@ class MemoryAttention(nn.Module):
             )
 
         batch_size, q_len, _ = hidden_states.size()
+        if input_ids is None:
+            raise ValueError("MemoryAttention requires `input_ids` to look up token-indexed memory values")
 
         q, k, m = self.q_proj(hidden_states), self.k_proj(hidden_states), self.m_proj(input_ids)
         q = rearrange(q, '... (h d) -> ... h d', d=self.head_dim)
         k = rearrange(k, '... (h d) -> ... h d', d=self.head_dim)
         m = rearrange(m, '... (h d) -> ... h d', d=self.head_dim)
 
-        v = k+self.m_norm(m)
+        v = k + self.m_norm(m).to(k.dtype)
 
         if self.qk_norm:
             q, k = self.q_norm(q), self.k_norm(k)
